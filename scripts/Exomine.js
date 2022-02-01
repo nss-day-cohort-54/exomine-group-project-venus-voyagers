@@ -17,11 +17,11 @@ export const MiningMarketplace = () => {
         </article>
 
         <article class="facilityInventory>
-            <h2>Europa Minerals</h2>
+        
         </article>
 
         <article class="facilityMinerals>
-            <h3>Facilitiy Minerals for Ganymede</h3>
+            
         </article>
 
         <article class="purchasedMinerals">
