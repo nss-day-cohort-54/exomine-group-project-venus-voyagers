@@ -41,80 +41,91 @@ const database = {
 }
 
 // Get Governor Names Function
+// returns an array of governor objects
 export const getGovernors = () => {
     return database.governors.map(governor => ({...governor}))
 }
 
 // Get Facilities
+// returns an array of faciltiy objects
 export const getFacilities = () => {
     return database.facilities.map(facility => ({...facility}))
 }
 
-// Get Colony Names Function
+// Get Colonies Function
+// returns an array of colony objects
 export const getColonies = () => {
     return database.colonies.map(colony => ({...colony}))
 }
 
 // Get Minerals List
+// returns an array of mineral objects
 export const getMinerals = () => {
     return database.minerals.map(mineral => ({...mineral}))
 }
 
 
 // Get facilityMinerals list
+// returns an array of facilityMineral objects
 export const getFacilityMinerals = () => {
     return database.facilityMinerals.map(facilityMineral => ({...facilityMineral}))
 }
 
 // Get colonyMinerals list
+// returns an array of colonyMineral objects
 export const getColonyMinerals = () => {
     return database.colonyMinerals.map(colonyMineral => ({...colonyMineral}))
 }
 
-// Set Active Governer Function
-export const setActiveGovernor = (governorId) => {
-    return ""
-}
-
-// Get Mineral amount from facilityMinerals given Facility
-export const getFacilityMineralAmount = (facilityId) => {
-    return ""
-} 
-
-// Get Mineral amount from colonyMinerals given Colony
-export const getColonyMineralAmount = (colonyId) => {
-    return ""
-} 
 
 // Get Transient State
+// returns transientState object
 export const getTransientState = () => {
-    return ""
+    return {...database.transientState}
 }
 
 // Set Mineral in transient state
+// dispatches stateChanged event
+// returns nothing
 export const setMineral = (mineralId) => {
-    return ""
+    database.transientState.selectedMineral = mineralId
+    document.dispatchEvent( new CustomEvent("stateChanged") )
 }
 
 // Set Facility in transient State
+// dispatches stateChanged event
+// returns nothing
 export const setFacility = (facilityId) => {
     database.transientState.selectedFacility = facilityId
     document.dispatchEvent( new CustomEvent("stateChanged") )
 }
 
-// Set Governor in transient state (note, different than "active" governors!)
+// Set Governor in transient state
+// dispatches stateChanged event
+// returns nothing
 export const setGovernor = (governorId) => {
-    return ""
+    database.transientState.selectedGovernor = governorId
+    document.dispatchEvent( new CustomEvent("stateChanged") )
 }
 
-// Set Mineral amount from facilityMinerals given Facility
-export const setFacilityMineral = (facilityId, mineralId) => {
-    return ""
+// Subtracts a mineral in facilityMinerals given id
+// returns nothing
+export const setFacilityMineral = (facilityMineralId) => {
+    for (const facilityMineral of database.facilityMinerals) {
+        if(facilityMineralId === facilityMineral.id){
+            facilityMineral.amount--
+        }
+    }
 }
 
-// Set Mineral amount from colonyMinerals given Colony
-export const setColonyMineral = (colonyId, mineralId) => {
-    return ""
+// Adds a mineral amount to colonyMinerals given id
+// returns nothing
+export const setColonyMineral = (colonyMineralId) => {
+    for (const colonyMineral of database.colonyMinerals) {
+        if(colonyMineralId === colonyMineral.id){
+            colonyMineral.amount++
+        }
+    }
 }
 
 
