@@ -1,10 +1,11 @@
 const database = {
     // governors
-    govornors: [
-        {id: 1, name: "Simon Rockslayer", active: true, ColoniesId: 2},
-        {id: 2, name: "Brockton Mistershackles", active: false, ColoniesId: 1},
-        {id: 3, name: "President Whitmores", active: true, ColoniesId: 3},
-        {id: 4, name: "Lelu Dallas", active: true, ColoniesId: 4},
+    governors: [
+        {id: 1, name: "Simon Rockslayer", active: true, coloniesId: 2},
+        {id: 2, name: "Brockton Mistershackles", active: false, coloniesId: 1},
+        {id: 3, name: "President Whitmores", active: true, coloniesId: 3},
+        {id: 4, name: "Lelu Dallas", active: true, coloniesId: 4},
+        {id: 5, name: "The Govornator", active: false, coloniesId: 5}
     ],
     // colonies
     colonies: [ 
@@ -12,15 +13,16 @@ const database = {
         {id: 2, name: "Downside Dwellers"},
         {id: 3, name: "The Trolls"},
         {id: 4, name: "Basecamp Five"},
+        {id: 5, name: "The Lost Ones"}
 
     ],
     // facilities
     facilities: [
-        {id: 1, name: "Dark Science Lab",active: true},
-        {id: 2, name: "Moonanites Medical",active: false},
-        {id: 3, name: "Stargate",active: true},
-        {id: 4, name: "Bright Side Labs",active: false},
-        {id: 5, name: "Assteroid Laundromat",active: true},
+        {id: 1, name: "Dark Science Lab", active: true},
+        {id: 2, name: "Moonanites Medical", active: false},
+        {id: 3, name: "Stargate", active: true},
+        {id: 4, name: "Bright Side Labs", active: false},
+        {id: 5, name: "Assteroid Laundromat", active: true},
     ],
     // minerals
     minerals: [
@@ -28,11 +30,24 @@ const database = {
         {id: 2, type: "Helium 3"},
         {id: 3, type: "Iron"},
         {id: 4, type: "Iridium"},
+        {id: 5, type: "Goooold"}
     ],
     // facilityMinerals
-
+    facilityMinerals: [
+        {id: 1, quantity: 350, mineralsId: 1, miningFacilityId: 1},
+        {id: 2, quantity: 500, mineralsId: 3, miningFacilityId: 2},
+        {id: 3, quantity: 750, mineralsId: 2, miningFacilityId: 3},
+        {id: 4, quantity: 580, mineralsId: 5, miningFacilityId: 4},
+        {id: 5, quantity: 503, mineralsId: 4, miningFacilityId: 5},
+    ],
     // colonyMinerals
-
+    colonyMinerals: [
+        {id: 1, coloniesId: 1, mineralsId: 4, quanity: 640},
+        {id: 2, coloniesId: 2, mineralsId: 2, quanity: 680},
+        {id: 3, coloniesId: 4, mineralsId: 1, quanity: 605},
+        {id: 4, coloniesId: 3, mineralsId: 3, quanity: 603},
+        {id: 5, coloniesId: 5, mineralsId: 5, quanity: 602},
+    ],
     transientState: {
         // selectedFacility
         // selectedGovernor
