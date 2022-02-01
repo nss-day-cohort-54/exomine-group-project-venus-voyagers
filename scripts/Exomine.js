@@ -1,7 +1,6 @@
 // import htmlString functions from .js
 
 // export function that returns a string of html
-
 export const MiningMarketplace = () => {
     return `
         <header class="header">
@@ -16,11 +15,11 @@ export const MiningMarketplace = () => {
             </section>
         </article>
 
-        <article class="facilityInventory>
+        <article class="ColonyMinerals">
         
         </article>
 
-        <article class="facilityMinerals>
+        <article class="facilityMinerals">
             
         </article>
 
