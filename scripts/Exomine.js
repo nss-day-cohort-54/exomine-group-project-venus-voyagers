@@ -15,7 +15,7 @@ export const MiningMarketplace = () => {
             </section>
         </article>
 
-        <article class="ColonyMinerals">
+        <article class="colonyMinerals">
         
         </article>
 
