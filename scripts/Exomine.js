@@ -24,12 +24,8 @@ export const MiningMarketplace = () => {
             <h3>Facilitiy Minerals for Ganymede</h3>
         </article>
 
-        <article>
-            <button id="purchase">Purchase Combo</button>
-        </article>
-
-        <article class="customerOrders">
-            <h2>Monthly Sales</h2>
+        <article class="purchasedMinerals">
+            <h3>Space Cart</h3>
         </article>
 
     `
