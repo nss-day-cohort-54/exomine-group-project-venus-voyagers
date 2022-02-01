@@ -28,7 +28,7 @@ const database = {
         {id: 2, type: "Helium 3"},
         {id: 3, type: "Iron"},
         {id: 4, type: "Iridium"},
-    ]
+    ],
     // facilityMinerals
 
     // colonyMinerals
