@@ -34,10 +34,12 @@ const database = {
 
 // Get Transient State
 
+// Set Mineral in transient state
 
 // Set Mineral amount from facilityMinerals given Facility
 
 // Set Mineral amount from colonyMinerals given Colony
+
 
 
 // Set Facility
