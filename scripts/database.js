@@ -67,7 +67,7 @@ export const getFacilityMinerals = () => {
 }
 
 // Get colonyMinerals list
-export const getcolonyMinerals = () => {
+export const getColonyMinerals = () => {
     return database.colonyMinerals.map(colonyMineral => ({...colonyMineral}))
 }
 
@@ -114,7 +114,7 @@ export const setFacilityMineral = (facilityId, mineralId) => {
 
 // Set Mineral amount from colonyMinerals given Colony
 export const setColonyMineral = (colonyId, mineralId) => {
-
+    return ""
 }
 
 
