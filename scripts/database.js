@@ -52,7 +52,7 @@ export const getFacilities = () => {
 
 // Get Colony Names Function
 export const getColonies = () => {
-    return database.colonys.map(colony => ({...colony}))
+    return database.colonies.map(colony => ({...colony}))
 }
 
 // Get Minerals List
@@ -96,7 +96,7 @@ export const setMineral = (mineralId) => {
     return ""
 }
 
-// Set Facility
+// Set Facility in transient State
 export const setFacility = (facilityId) => {
     database.transientState.selectedFacility = facilityId
     document.dispatchEvent( new CustomEvent("stateChanged") )
