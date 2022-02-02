@@ -49,8 +49,9 @@ const database = {
         {id: 5, coloniesId: 5, mineralsId: 5, quanity: 602},
     ],
     transientState: {
+        governorId: 1
         // selectedFacility
-        // selectedGovernor
+        // goverorId
         // selectedMineral
     }
 }

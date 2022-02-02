@@ -9,22 +9,22 @@ export const FacilitiesHTML = () => {
     const facilities = getFacilities();
     
     // start drop down html select tag
-    const facilityList = `<select name="facilities">`
+    let facilityList = `<select name="facilities">`
     // check to make sure state of governorId is not undefined (option has been selected)
-    if (state.governorId != undefined) {
+    if (state.governorId) {
         // map out facilities which meet criteria
         const facilityFound = facilities.map(facility => {
             // check if facility is active
-            if (facility.active === true) {
+            if (facility.active) {
                 // add options to facilityList
-                facilityList += `
-                <option value="${facility.id}">${facility.name}</option>`
+                facilityList += `<option value="${facility.id}">${facility.name}</option>`
             }
         })
-        // join all facilities found and then add closing select tag
-        facilityList += facilityFound.join("")
-        facilityList += `</select>`
+        return facilityList
+        
     }
+    
+    facilityList += `</select>`
     // return list
     return facilityList
 }
