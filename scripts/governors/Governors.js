@@ -13,7 +13,7 @@ export const SelectGovernor = () => {
 
     for (const governor of governors) {
         if (governor.active) {
-            HTMLSting += `<option value="${governor.id}">${governor.name}</option>`
+            HTMLSting += `<option value="${governor.name}">${governor.name}</option>`
         }
     }
 
