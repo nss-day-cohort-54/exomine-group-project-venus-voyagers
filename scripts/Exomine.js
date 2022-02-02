@@ -1,5 +1,6 @@
 // import htmlString functions from .js
 import { facilityMineralList } from "./facilities/FacilityMinerals.js";
+import { FacilitiesHTML } from "./facilities/SelectFacility.js";
 import { displayCart } from "./Orders.js";
 
 // export function that returns a string of html
@@ -13,7 +14,8 @@ export const MiningMarketplace = () => {
                 Governor Dropdown
             </section>
             <section class="choices__facility">
-                Facility Dropdown
+                <h2>Facility Dropdown</h2>
+                ${FacilitiesHTML()}
             </section>
         </article>
 
