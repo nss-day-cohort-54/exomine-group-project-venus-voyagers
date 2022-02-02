@@ -8,19 +8,19 @@ export const MiningMarketplace = () => {
         </header>
         <article class="choices">
             <section class="choices__governor">
-                
+                Governor Dropdown
             </section>
             <section class="choices__facility">
-
+                Facility Dropdown
             </section>
         </article>
 
         <article class="colonyMinerals">
-        
+            Colony Minerals
         </article>
 
         <article class="facilityMinerals">
-            
+            Facility Minerals
         </article>
 
         <article class="purchasedMinerals">
