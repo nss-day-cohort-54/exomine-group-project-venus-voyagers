@@ -1,6 +1,5 @@
 // import getGovernor, setGovernor, getTransientState
 import { getGovernors, getTransientState, setGovernor } from "../database.js"
-import { facilityMineralList } from "../facilities/FacilityMinerals.js"
 // export string containing dropdown menu containing only active governers
 
 const governors = getGovernors()
