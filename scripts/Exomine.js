@@ -2,6 +2,7 @@
 import { facilityMineralList } from "./facilities/FacilityMinerals.js";
 import { FacilitiesHTML } from "./facilities/SelectFacility.js";
 import { displayCart } from "./Orders.js";
+import { SelectGovernor } from "./governors/Governors.js";
 
 // export function that returns a string of html
 export const MiningMarketplace = () => {
@@ -11,7 +12,7 @@ export const MiningMarketplace = () => {
         </header>
         <article class="choices">
             <section class="choices__governor">
-                Governor Dropdown
+                ${SelectGovernor()}
             </section>
             <section class="choices__facility">
                 <h2>Facility Dropdown</h2>
