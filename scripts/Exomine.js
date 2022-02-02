@@ -8,7 +8,7 @@ export const MiningMarketplace = () => {
         </header>
         <article class="choices">
             <section class="choices__governor">
-                
+
             </section>
             <section class="choices__facility">
 
