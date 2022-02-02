@@ -48,7 +48,7 @@ export const facilityMineralList = () => {
         // Return string of array using join
         html += mineralArray.join("")
         html += "</ul>"
-    
+
         return html
 
     }
