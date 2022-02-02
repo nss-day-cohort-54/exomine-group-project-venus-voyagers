@@ -21,14 +21,15 @@ export const FacilitiesHTML = () => {
                 <option value="${facility.id}">${facility.name}</option>`
             }
         })
+        // join all facilities found and then add closing select tag
         facilityList += facilityFound.join("")
         facilityList += `</select>`
     }
+    // return list
     return facilityList
 }
+
 // add an eventListener that invokes setFacility
-
-
 document.addEventListener(
     "change",
     (event) => {
