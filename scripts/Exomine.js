@@ -1,7 +1,7 @@
 // import htmlString functions from .js
 import { facilityMineralList } from "./facilities/FacilityMinerals.js";
 import { FacilitiesHTML } from "./facilities/SelectFacility.js";
-
+import { SelectGovernor } from "./governors/Governors.js";
 // export function that returns a string of html
 export const MiningMarketplace = () => {
     return `

@@ -56,7 +56,7 @@ const database = {
     transientState: {
         // Can uncomment these for testing purposes
         // selectedFacility: 1,
-        selectedGovernor: 3,
+        // selectedGovernor: 3,
         // selectedMineral: 1
     }
 }
