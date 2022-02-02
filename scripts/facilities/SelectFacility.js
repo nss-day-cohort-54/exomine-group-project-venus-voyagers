@@ -20,7 +20,7 @@ export const FacilitiesHTML = () => {
         })
         facilityList += "</select>"
     }
-    return governorList
+    return facilityList
 }
 // add an eventListener that invokes setFacility
 
@@ -35,4 +35,3 @@ document.addEventListener(
     }
 )
 
-console.log()
