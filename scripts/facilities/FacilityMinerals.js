@@ -34,6 +34,7 @@ export const facilityMineralList = () => {
         // Add to array as a radio button with default based on current transient state
         const mineralArray = availableMinerals.map(availableMineral => {
             const mineralName = minerals.find(mineral => mineral.id === availableMineral.mineralsId).type
+            // checks if there is a selectedMineral then if the available miner matches the selected mineral 
             if(selectedMineral && availableMineral.mineralsId === selectedMineral) {
                 return `<li>
                 <input type="radio" name="mineral" value="${availableMineral.mineralsId}" checked /> ${availableMineral.quantity} tons of ${mineralName}
@@ -48,7 +49,7 @@ export const facilityMineralList = () => {
         // Return string of array using join
         html += mineralArray.join("")
         html += "</ul>"
-    
+
         return html
 
     }

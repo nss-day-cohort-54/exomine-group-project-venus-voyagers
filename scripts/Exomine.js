@@ -1,6 +1,7 @@
 // import htmlString functions from .js
 import { facilityMineralList } from "./facilities/FacilityMinerals.js";
 import { FacilitiesHTML } from "./facilities/SelectFacility.js";
+import { displayCart } from "./Orders.js";
 
 // export function that returns a string of html
 export const MiningMarketplace = () => {
@@ -28,6 +29,10 @@ export const MiningMarketplace = () => {
 
         <article class="purchasedMinerals">
             <h3>Space Cart</h3>
+            <section class="spaceCart">
+            ${displayCart()}
+            </section>
+            <button id="orderButton">Purchase Mineral</button>
         </article>
 
     `
