@@ -29,7 +29,6 @@ export const FacilitiesHTML = () => {
             }
         })
         facilityList += facilityFound.join("")
-        
     }
     
     facilityList += `</select>`
