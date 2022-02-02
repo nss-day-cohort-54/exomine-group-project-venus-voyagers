@@ -1,23 +1,25 @@
 // import getGovernor, setGovernor, getTransientState
-import { getGovernor, setGovernor } from "./scripts/database.js"
+import { getGovernors, setGovernor } from "../database.js"
 // export string containing dropdown menu containing only active governers
 
-const governors = getGovernor()
+const governors = getGovernors()
 
 
 export const SelectGovernor = () => {
     let HTMLSting = `<div class="governorDropdown">
-    <label for="gov-names">Choose a dog name:</label>
+    <label for="gov-names">Choose a governor:</label>
     <select name="gov-names" id="gov-names">
-    <option value="" disabled selected hidden>Choose Governor...</option>`
+    <option value="" disabled selected hidden>Choose a governor...</option>`
 
     for (const governor of governors) {
         if (governor.active) {
-            HTMLSting += `<option name="governor" value="${governor.name}">${governor.name}</option>`
+            HTMLSting += `<option value="${governor.id}">${governor.name}</option>`
         }
     }
 
     HTMLSting += `</select></div>`
+
+    return HTMLSting
 }
 
 // add an eventListener that invokes setGovernor
@@ -25,7 +27,7 @@ export const SelectGovernor = () => {
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.name === "governor") {
+        if (event.target.name === "gov-names") {
             setGovernor(event.target.value)
         }
     }

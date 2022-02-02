@@ -6,11 +6,6 @@ const mainContainer = document.querySelector("#container")
 
 // call exomine html function
 
-<<<<<<< HEAD
-// add eventListener for statechanged that reloads the page
-
-
-=======
 const renderAllHTML = () => {
     mainContainer.innerHTML = MiningMarketplace()
 }
@@ -22,4 +17,3 @@ renderAllHTML()
 document.addEventListener("stateChanged", event => {
     renderAllHTML()
 })
->>>>>>> main

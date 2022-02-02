@@ -1,5 +1,5 @@
 // import htmlString functions from .js
-
+import { SelectGovernor } from "./governors/Governors.js"
 // export function that returns a string of html
 export const MiningMarketplace = () => {
     return `
@@ -8,11 +8,7 @@ export const MiningMarketplace = () => {
         </header>
         <article class="choices">
             <section class="choices__governor">
-<<<<<<< HEAD
-
-=======
-                Governor Dropdown
->>>>>>> main
+                ${SelectGovernor()}
             </section>
             <section class="choices__facility">
                 Facility Dropdown
