@@ -8,21 +8,23 @@ export const FacilitiesHTML = () => {
     const state = getTransientState();
     const facilities = getFacilities();
     let presetId = ""
-    
+    let facilityList = `<select name="facilities">`
+
     if(state.selectedFacility) {
-        presetId = state.selectedGovernor
+        presetId = state.selectedFacility
+    } else {
+        facilityList += `<option value="" disabled selected hidden>Choose a Faciliy...</option>`
     }
     // start drop down html select tag
-    let facilityList = `<select name="facilities">`
     // check to make sure state of governorId is not undefined (option has been selected)
     if (state.selectedGovernor) {
         // map out facilities which meet criteria
         const facilityFound = facilities.map(facility => {
             // check if facility is active
-            if (facility.active && facility.id === state.selectedFacility) {
+            if (facility.active && facility.id === presetId) {
                 // add options to facilityList
                 return `<option value="${facility.id}" selected>${facility.name} </option>`
-            } else { 
+            } else if (facility.active) { 
                 return `<option value="${facility.id}">${facility.name}</option>`
             }
         })
