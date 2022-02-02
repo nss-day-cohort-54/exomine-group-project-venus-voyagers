@@ -1,5 +1,6 @@
 // import htmlString functions from .js
-import { SelectGovernor } from "./governors/Governors.js"
+import { facilityMineralList } from "./facilities/FacilityMinerals.js";
+
 // export function that returns a string of html
 export const MiningMarketplace = () => {
     return `
@@ -20,7 +21,7 @@ export const MiningMarketplace = () => {
         </article>
 
         <article class="facilityMinerals">
-            Facility Minerals
+            ${facilityMineralList()}
         </article>
 
         <article class="purchasedMinerals">
