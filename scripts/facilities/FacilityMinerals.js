@@ -1,6 +1,6 @@
 // import getFacilities, getMinerals, getFacilityMinerals, 
 // setMineral, getTransientState
-import { getFacilities, getMinerals, getFacilityMinerals, getTransientState } from "../database.js";
+import { getFacilities, getMinerals, getFacilityMinerals, getTransientState, setMineral } from "../database.js";
 
 // Create a function that iterates through minerals
 
@@ -33,14 +33,14 @@ export const facilityMineralList = () => {
             
         // Add to array as a radio button with default based on current transient state
         const mineralArray = availableMinerals.map(availableMineral => {
-            const mineralName = minerals.find(mineral => mineral.id === availableMineral.id).type
-            if(selectedMineral && availableMineral.id === selectedMineral) {
+            const mineralName = minerals.find(mineral => mineral.id === availableMineral.mineralsId).type
+            if(selectedMineral && availableMineral.mineralsId === selectedMineral) {
                 return `<li>
-                <input type="radio" name="mineral" value="${availableMineral.id}" checked /> ${availableMineral.quantity} tons of ${mineralName}
+                <input type="radio" name="mineral" value="${availableMineral.mineralsId}" checked /> ${availableMineral.quantity} tons of ${mineralName}
             </li>`
             } else {
                 return `<li>
-                <input type="radio" name="size" value="${availableMineral.id}" /> ${availableMineral.quantity} tons of ${mineralName}
+                <input type="radio" name="mineral" value="${availableMineral.mineralsId}" /> ${availableMineral.quantity} tons of ${mineralName}
             </li>`
             }
         })
@@ -57,16 +57,20 @@ export const facilityMineralList = () => {
 
 }
 
-// Filter minerals at active facility
-// export const getFacilityMineralAmount = (facilityId) => {
-//     return ""
-// } 
-
-
 //  Add event listener for radio button state change
+document.addEventListener(
+    "change",
+    (event) => {
+        if (event.target.name === "mineral") {
 
+            // Calls setMineral and sets it
+            setMineral(parseInt(event.target.value))
+            document.dispatchEvent(new CustomEvent("stateChanged"))
 
-// Calls setMineral and sets it
+        }
+    }
+)
+
 
 
 
