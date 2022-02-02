@@ -17,7 +17,7 @@ export const facilityMineralList = () => {
     const selectedFacility = transientState.selectedFacility
     const selectedMineral = transientState.selectedMineral
     
-    // if there is a selectedFacility return a radio list string, else return empty string
+    // if there is a selectedFacility return a radio list string, else return default header string
     if(selectedFacility) {
     
         // initialize header of string
@@ -28,19 +28,19 @@ export const facilityMineralList = () => {
         
         // Check if quantity is more than 0
         const availableMinerals = facilityMinerals.filter(facilityMineral => {
-            return facilityMineral.amount > 0 && facilityMineral.facilityId === selectedFacility 
+            return facilityMineral.quantity > 0 && facilityMineral.miningFacilityId === selectedFacility 
             })
             
-        // Add to array
+        // Add to array as a radio button with default based on current transient state
         const mineralArray = availableMinerals.map(availableMineral => {
-            const mineralName = minerals.find(mineral => mineral.id === availableMineral.id).name
+            const mineralName = minerals.find(mineral => mineral.id === availableMineral.id).type
             if(selectedMineral && availableMineral.id === selectedMineral) {
                 return `<li>
-                <input type="radio" name="mineral" value="${availableMineral.id}" checked /> ${availableMineral.amount} tons of ${mineralName}
+                <input type="radio" name="mineral" value="${availableMineral.id}" checked /> ${availableMineral.quantity} tons of ${mineralName}
             </li>`
             } else {
                 return `<li>
-                <input type="radio" name="size" value="${availableMineral.id}" /> ${availableMineral.amount} tons of ${mineralName}
+                <input type="radio" name="size" value="${availableMineral.id}" /> ${availableMineral.quantity} tons of ${mineralName}
             </li>`
             }
         })
@@ -58,9 +58,9 @@ export const facilityMineralList = () => {
 }
 
 // Filter minerals at active facility
-export const getFacilityMineralAmount = (facilityId) => {
-    return ""
-} 
+// export const getFacilityMineralAmount = (facilityId) => {
+//     return ""
+// } 
 
 
 //  Add event listener for radio button state change
