@@ -1,8 +1,40 @@
 //import getMinerals, getTransientState, getGovernors, getColonies, getColonyMinerals
+import { getMinerals, getTransientState, getGovernors, getColonies, getColonyMinerals } from "../database.js"
+// get state
+// check if governor is selected
+// iterate over filtered list of colony mineral objects
+// find name of mineral
+// build html string with name property
+// return list
 
-// Get Colony from Selected Governor Name
+export const coloniesHTML = () => {
+    // Get Colony from Selected Governor Name
+    const colonies = getColonies()
+    const governors = getGovernors()
+    const state = getTransientState()
+    const minerals = getMinerals()
+    const colonyMinerals = getColonyMinerals()
+    let coloniesHTML = "<h2>Colony Minerals</h2>"
+    if (state.selectedGovernor) {
+        // if true, check what colony they govern
+        const governor = governors.find(governor =>  governor.id === state.selectedGovernor )
+        // find in colony list the colony obj which matches colonyId
+        const foundColonies = colonies.find(colony => colony.id === governor.coloniesId)
+        coloniesHTML = `<h2>${foundColonies.name}</h2><ul>`
+        // filter colonyMinerals by colony that governor is in
+        const colonyMineralsList = colonyMinerals.filter(colonyMineral => colonyMineral.id === foundColonies.id)
+        const finalList = colonyMineralsList.map(list => {
+            const foundMineral = minerals.find(mineral => mineral.id === list.mineralsId)
+            return `<li>${list.quantity} tons of ${foundMineral.type} </li>`
+        })
+        coloniesHTML += finalList.join("")
+        coloniesHTML += "</ul>"
+        return coloniesHTML
+    } 
+    return coloniesHTML
+    
 
-// Export function that creates a string showing the total number of minerals.
-export const getColonyMineralAmount = (colonyId) => {
-    return ""
-} 
+
+}
+
+

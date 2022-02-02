@@ -1,4 +1,5 @@
 // import htmlString functions from .js
+import { coloniesHTML } from "./colonies/Colonies.js";
 import { facilityMineralList } from "./facilities/FacilityMinerals.js";
 import { FacilitiesHTML } from "./facilities/SelectFacility.js";
 import { displayCart } from "./Orders.js";
@@ -21,7 +22,7 @@ export const MiningMarketplace = () => {
         </article>
 
         <article class="colonyMinerals">
-            Colony Minerals
+            ${coloniesHTML()}
         </article>
 
         <article class="facilityMinerals">

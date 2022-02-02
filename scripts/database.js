@@ -47,17 +47,14 @@ const database = {
     ],
     // colonyMinerals
     colonyMinerals: [
-        {id: 1, coloniesId: 1, mineralsId: 4, quanity: 640},
-        {id: 2, coloniesId: 2, mineralsId: 2, quanity: 680},
-        {id: 3, coloniesId: 4, mineralsId: 1, quanity: 605},
-        {id: 4, coloniesId: 3, mineralsId: 3, quanity: 603},
-        {id: 5, coloniesId: 5, mineralsId: 5, quanity: 602},
+        {id: 1, coloniesId: 1, mineralsId: 4, quantity: 640},
+        {id: 2, coloniesId: 2, mineralsId: 2, quantity: 680},
+        {id: 3, coloniesId: 4, mineralsId: 1, quantity: 605},
+        {id: 4, coloniesId: 3, mineralsId: 3, quantity: 603},
+        {id: 5, coloniesId: 5, mineralsId: 5, quantity: 602},
     ],
     transientState: {
-        // Can uncomment these for testing purposes
-        // selectedFacility: 1,
-        // selectedGovernor: 3,
-        // selectedMineral: 1
+       
     }
 }
 
