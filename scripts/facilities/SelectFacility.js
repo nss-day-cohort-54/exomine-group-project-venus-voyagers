@@ -13,7 +13,7 @@ export const FacilitiesHTML = () => {
     if(state.selectedFacility) {
         presetId = state.selectedFacility
     } else {
-        facilityList += `<option value="" disabled selected hidden>Choose a Faciliy...</option>`
+        facilityList += `<option value="" disabled selected hidden>Choose a facility...</option>`
     }
     // start drop down html select tag
     // check to make sure state of governorId is not undefined (option has been selected)
