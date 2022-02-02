@@ -7,20 +7,26 @@ export const FacilitiesHTML = () => {
 // get state and governor list
     const state = getTransientState();
     const facilities = getFacilities();
+    let presetId = ""
     
+    if(state.selectedFacility) {
+        presetId = state.selectedGovernor
+    }
     // start drop down html select tag
     let facilityList = `<select name="facilities">`
     // check to make sure state of governorId is not undefined (option has been selected)
-    if (state.governorId) {
+    if (state.selectedGovernor) {
         // map out facilities which meet criteria
         const facilityFound = facilities.map(facility => {
             // check if facility is active
-            if (facility.active) {
+            if (facility.active && facility.id === state.selectedFacility) {
                 // add options to facilityList
-                facilityList += `<option value="${facility.id}">${facility.name}</option>`
+                return `<option value="${facility.id}" selected>${facility.name} </option>`
+            } else { 
+                return `<option value="${facility.id}">${facility.name}</option>`
             }
         })
-        return facilityList
+        facilityList += facilityFound.join("")
         
     }
     
@@ -33,7 +39,7 @@ export const FacilitiesHTML = () => {
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.value === `${facility.id}`) {
+        if (event.target.name === "facilities") {
             setFacility(parseInt(event.target.value))
             document.dispatchEvent(new CustomEvent("stateChanged"))
         }
