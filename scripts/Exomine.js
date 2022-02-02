@@ -2,6 +2,7 @@
 import { facilityMineralList } from "./facilities/FacilityMinerals.js";
 import { FacilitiesHTML } from "./facilities/SelectFacility.js";
 import { displayCart } from "./Orders.js";
+import { SelectGovernor } from "./governors/Governors.js";
 
 // export function that returns a string of html
 export const MiningMarketplace = () => {
