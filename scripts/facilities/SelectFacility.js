@@ -1,10 +1,13 @@
 // import getFacility, setFacility, getTransientState
 import { getFacilities, setFacility, getTransientState} from "../database.js";
+
+
 // export string containing dropdown menu containing only active facilities and only after a governor has been selected
 export const FacilitiesHTML = () => {
 // get state and governor list
     const state = getTransientState();
     const facilities = getFacilities();
+    
     // start drop down html select tag
     const facilityList = `<select name="facilities">`
     // check to make sure state of governorId is not undefined (option has been selected)
@@ -18,7 +21,8 @@ export const FacilitiesHTML = () => {
                 <option value="${facility.id}">${facility.name}</option>`
             }
         })
-        facilityList += "</select>"
+        facilityList += facilityFound.join("")
+        facilityList += `</select>`
     }
     return facilityList
 }
