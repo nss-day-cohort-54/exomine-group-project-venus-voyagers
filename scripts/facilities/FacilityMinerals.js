@@ -6,7 +6,9 @@
 // Find which facility is active 
 
 // Filter minerals at active facility
-
+export const getFacilityMineralAmount = (facilityId) => {
+    return ""
+} 
 // Check if quantity is more than 0
 
 // Add to array
