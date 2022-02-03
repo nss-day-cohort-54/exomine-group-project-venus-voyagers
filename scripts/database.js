@@ -39,11 +39,11 @@ const database = {
         {id: 3, quantity: 750, mineralsId: 2, miningFacilityId: 3},
         {id: 4, quantity: 580, mineralsId: 5, miningFacilityId: 4},
         {id: 5, quantity: 503, mineralsId: 4, miningFacilityId: 5},
-        {id: 1, quantity: 350, mineralsId: 2, miningFacilityId: 1},
-        {id: 2, quantity: 500, mineralsId: 4, miningFacilityId: 2},
-        {id: 3, quantity: 750, mineralsId: 3, miningFacilityId: 3},
-        {id: 4, quantity: 580, mineralsId: 1, miningFacilityId: 4},
-        {id: 5, quantity: 503, mineralsId: 5, miningFacilityId: 5},
+        {id: 6, quantity: 350, mineralsId: 2, miningFacilityId: 1},
+        {id: 7, quantity: 500, mineralsId: 4, miningFacilityId: 2},
+        {id: 8, quantity: 750, mineralsId: 3, miningFacilityId: 3},
+        {id: 9, quantity: 580, mineralsId: 1, miningFacilityId: 4},
+        {id: 10, quantity: 503, mineralsId: 5, miningFacilityId: 5},
     ],
     // colonyMinerals
     colonyMinerals: [
