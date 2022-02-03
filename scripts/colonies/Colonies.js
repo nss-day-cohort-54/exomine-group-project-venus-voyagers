@@ -3,9 +3,6 @@ import { getMinerals, getTransientState, getGovernors, getColonies, getColonyMin
 // get state
 // check if governor is selected
 // iterate over filtered list of colony mineral objects
-// find name of mineral
-// build html string with name property
-// return list
 
 export const coloniesHTML = () => {
     // Get Colony from Selected Governor Name
@@ -24,11 +21,14 @@ export const coloniesHTML = () => {
         // filter colonyMinerals by colony that governor is in
         const colonyMineralsList = colonyMinerals.filter(colonyMineral => colonyMineral.coloniesId === foundColonies.id)
         const finalList = colonyMineralsList.map(list => {
+            // match mineral id with find name of mineral 
             const foundMineral = minerals.find(mineral => mineral.id === list.mineralsId)
+            // build html string with name property
             return `<li>${list.quantity} tons of ${foundMineral.type} </li>`
         })
         coloniesHTML += finalList.join("")
         coloniesHTML += "</ul>"
+        // return list
         return coloniesHTML
     } 
     return coloniesHTML

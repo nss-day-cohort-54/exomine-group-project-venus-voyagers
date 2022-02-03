@@ -1,11 +1,14 @@
 // import getGovernor, setGovernor, getTransientState
 import { getGovernors, getTransientState, setGovernor } from "../database.js"
-// export string containing dropdown menu containing only active governers
 
+// call the governor array into a new variable
 const governors = getGovernors()
 
+// create a fuction to export a string containing dropdown menu of only active governers
 export const SelectGovernor = () => {
+    // initiate html string
     let presetId = ""
+    // 
     let HTMLString = `<div class="governorDropdown">
     <label for="gov-names">Choose a governor:</label>
     <select name="gov-names" id="gov-names">`

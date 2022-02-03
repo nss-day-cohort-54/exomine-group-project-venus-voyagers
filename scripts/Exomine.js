@@ -21,19 +21,20 @@ export const MiningMarketplace = () => {
         <header class="header">
             <h1 class="title">Solar System Mining Marketplace</h1>
         </header>
-        <article class="choices">
+        
+        <article class="coloniesAndGovernors">
             <section class="choices__governor">
                 ${SelectGovernor()}
             </section>
-            <section class="choices__facility">
-                ${FacilitiesHTML()}
+            <section class="colonyMinerals">
+                ${coloniesHTML()}
             </section>
-        </article>
+            </article>
 
-        <article class="colonyMinerals">
-            ${coloniesHTML()}
+        <article class="choices__facility">
+            ${FacilitiesHTML()}
         </article>
-
+        <div class="facilityAndCart">
         <article class="facilityMinerals">
             ${facilityMineralList()}
         </article>
@@ -45,6 +46,6 @@ export const MiningMarketplace = () => {
             </section>
             <button id="orderButton">Purchase Mineral</button>
         </article>
-
+        </div>
     `
 }
