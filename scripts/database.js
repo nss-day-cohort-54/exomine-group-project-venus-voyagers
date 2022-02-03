@@ -186,19 +186,40 @@ export const purchaseMineral = () => {
 
         // add 1 to colony's minerals
             // get selectedGovernor from state
+            const targetGovernor = state.selectedGovernor
             // find colony by selectedGovernor's id
+            const foundColony = governors.find(governor => governor.id === targetGovernor).coloniesId
             
-            // colony's mineral = filtering colonyMinerals by foudColony
-            // check if the colony already has any of the mineral by finding selectedMinera in colony's Minerals
+            // colony's mineral = filtering colonyMinerals by foundColony
+            const foundColonyMinerals = colonyMinerals.filter(mineral => foundColony === mineral.coloniesId )
+            // check if the colony already has any of the mineral by finding selectedMineral in colony's Minerals
+            const colonyMineralToEdit = foundColonyMinerals.find(mineral => state.selectedMineral === mineral.mineralsId)
             // if colony has mineral stock
                 // add 1
-
+            if (colonyMineralToEdit) {
+                for (const colonyMineral of database.colonyMinerals) {
+                    if(colonyMineral.id === colonyMineralToEdit.id) {
+                        colonyMineral.quantity++
+                    }
+                }
+            }
             // if colony has no mineral of this type
                 // add a colonyMineral entry where quantity = 1
+            else {
+                let newColonyMineral = {
+                    id: "",
+                    coloniesId: foundColony,
+                    mineralsId: state.selectedMineral,
+                    quantity: 1
+                }
+                const lastIndex = database.colonyMinerals.length - 1
+                newColonyMineral.id = database.colonyMinerals[lastIndex].id + 1
+                database.colonyMinerals.push(newColonyMineral)
+            }
 
         // Clear space cart
             // delete database.transientState.selectedMineral -- if no selectedMineral displayCart() does not add to the HTML
-
+            delete database.transientState.selectedMineral
         // Broadcast custom event to entire documement so that the
         // application can re-render and update state
         document.dispatchEvent( new CustomEvent("stateChanged") )

@@ -22,7 +22,7 @@ export const coloniesHTML = () => {
         const foundColonies = colonies.find(colony => colony.id === governor.coloniesId)
         coloniesHTML = `<h2>${foundColonies.name}</h2><ul>`
         // filter colonyMinerals by colony that governor is in
-        const colonyMineralsList = colonyMinerals.filter(colonyMineral => colonyMineral.id === foundColonies.id)
+        const colonyMineralsList = colonyMinerals.filter(colonyMineral => colonyMineral.coloniesId === foundColonies.id)
         const finalList = colonyMineralsList.map(list => {
             const foundMineral = minerals.find(mineral => mineral.id === list.mineralsId)
             return `<li>${list.quantity} tons of ${foundMineral.type} </li>`
