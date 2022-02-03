@@ -8,7 +8,8 @@ export const FacilitiesHTML = () => {
     const state = getTransientState();
     const facilities = getFacilities();
     let presetId = ""
-    let facilityList = `<select name="facilities">`
+    let facilityList = `<label for="facilities">Choose a facility:</label>
+                        <select name="facilities">`
 
     if(state.selectedFacility) {
         presetId = state.selectedFacility

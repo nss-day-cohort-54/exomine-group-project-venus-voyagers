@@ -22,7 +22,7 @@ const database = {
         {id: 2, name: "Moonanites Medical", active: false},
         {id: 3, name: "Stargate", active: true},
         {id: 4, name: "Bright Side Labs", active: false},
-        {id: 5, name: "Assteroid Laundromat", active: true},
+        {id: 5, name: "Asteroid Laundromat", active: true},
     ],
     // minerals
     minerals: [
@@ -146,11 +146,61 @@ export const setColonyMineral = (colonyMineralId) => {
     }
 }
 
-
 // Purchase Minerals and update state
 export const purchaseMineral = () => {
+    // get the transientState
+    const state = getTransientState()
+    // get the selectedMineral from transientState
+    const mineralToBuy = state.selectedMineral
+    // get facilities
+    // get facilityMinerals
+    // get colonies
+    // get governors to find the colony
+    // get colonyMinerals
+    const colonies = getColonies()
+    const governors = getGovernors()
+    const colonyMinerals = getColonyMinerals()
+    const facilities = getFacilities()
+    const facilityMinerals = getFacilityMinerals()
+
+    // Check if order is proper
+    if(state.selectedMineral){
+
+        // subtract 1 from facility's available minerals
+        // available minerals = filter facilityMinerals by the selectedFacility (id)
+        const availableMinerals = facilityMinerals.filter(facilityMineral => facilityMineral.miningFacilityId === state.selectedFacility)
+
+        // facilityMineral to edit = filter available minerals by selectedMineral
+        const facilityMineralToEdit = availableMinerals.find(facilityMineral => facilityMineral.mineralsId === mineralToBuy)
+
+        // get the id from facilityMineral to edit 
+        const targetId = facilityMineralToEdit.id
+        // database.facilityMineral.id == the above id [ mineral to edit ]
+        // subtract 1 from that facilityMineral's amount property
+        // database.facilityMinerals[ targetId - 1 ].quantity--
+        for (const facilityMineral of database.facilityMinerals) {
+            if(facilityMineral.id === targetId){
+                facilityMineral.quantity--
+            }
+        }
+
+        // add 1 to colony's minerals
+            // get selectedGovernor from state
+            // find colony by selectedGovernor's id
+            
+            // colony's mineral = filtering colonyMinerals by foudColony
+            // check if the colony already has any of the mineral by finding selectedMinera in colony's Minerals
+            // if colony has mineral stock
+                // add 1
+
+            // if colony has no mineral of this type
+                // add a colonyMineral entry where quantity = 1
+
+        // Clear space cart
+            // delete database.transientState.selectedMineral -- if no selectedMineral displayCart() does not add to the HTML
 
         // Broadcast custom event to entire documement so that the
         // application can re-render and update state
         document.dispatchEvent( new CustomEvent("stateChanged") )
+    }
 }

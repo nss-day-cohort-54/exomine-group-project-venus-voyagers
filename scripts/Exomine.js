@@ -4,6 +4,16 @@ import { facilityMineralList } from "./facilities/FacilityMinerals.js";
 import { FacilitiesHTML } from "./facilities/SelectFacility.js";
 import { displayCart } from "./Orders.js";
 import { SelectGovernor } from "./governors/Governors.js";
+import { purchaseMineral } from "./database.js";
+
+document.addEventListener(
+    "click",
+    event => {
+        if(event.target.id === "orderButton"){
+            purchaseMineral()
+        }
+    }
+)
 
 // export function that returns a string of html
 export const MiningMarketplace = () => {
@@ -16,7 +26,6 @@ export const MiningMarketplace = () => {
                 ${SelectGovernor()}
             </section>
             <section class="choices__facility">
-                <h2>Facility Dropdown</h2>
                 ${FacilitiesHTML()}
             </section>
         </article>
