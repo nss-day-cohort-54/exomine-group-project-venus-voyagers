@@ -7,9 +7,15 @@
     display: flex;
 }
 
+.choices__governor {
+    flex-basis: 40%;
+}
+
 .colonyMinerals {
     align-items: center;
-    flex-basis: 50%;
+    flex-basis: 55%;
+    margin-bottom: 1em;
+    text-align: center;
 }
 
 h2, h3 {
@@ -22,14 +28,26 @@ h2, h3 {
 
 .facilityMinerals {
     flex-basis: 75%;
+    text-align: center;
+    border: 1px dashed purple;
+    padding: 1em;
+    margin-right: .5em;
+}
 
+.purchasedMinerals {
+    border: 1px dashed rgb(15, 120, 185);
+    padding: 1em;
+    flex-basis: 25%;
+    align-items: center;
+    text-align: center;
+    margin-left: .5em;
 }
 
 #orderButton {
     padding: .2em .7em;
     flex-wrap: wrap;
     font-size: 1em;
-    
+    max-width: 7.5em;
 }
 
 
