@@ -1,6 +1,6 @@
 // import getFacilities, getMinerals, getFacilityMinerals, 
 // setMineral, getTransientState
-import { getFacilities, getMinerals, getFacilityMinerals, getTransientState, setMineral } from "../database.js";
+import { getFacilities, getMinerals, getFacilityMinerals, getTransientState, setMineral, addOrder } from "../database.js";
 
 // Create a function that iterates through minerals available in the facility and outputs a list
 
@@ -73,6 +73,7 @@ document.addEventListener(
 
             // Calls setMineral and sets it
             setMineral(parseInt(event.target.value))
+            addOrder()
             document.dispatchEvent(new CustomEvent("stateChanged"))
 
         }

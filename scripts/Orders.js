@@ -13,14 +13,16 @@ export const displayCart = () => {
     let html = ""
 
     // check if facilitySelected and selectedMineal is in transient state
-    if(transientState.selectedFacility && transientState.selectedMineral){
+    if(transientState.allOrders.length){
+        for(const order of transientState.allOrders) {
         // find facility name that has an id equal to the selected facility in transient state
-        const facilityName = facilities.find(facility => facility.id === transientState.selectedFacility).name
+        const facilityName = facilities.find(facility => facility.id === order.facilityId).name
         // find mineral name making sure it has an id equal to selected mineral in state
-        const mineralName = minerals.find(mineral => mineral.id === transientState.selectedMineral).type
+        const mineralName = minerals.find(mineral => mineral.id === order.mineralId).type
         // add string to html variable with message containing interpolated mineral and facility name
         html += `<div id="cartContents">1 ton of ${mineralName} from ${facilityName}</div>`
         //const spaceCart = document.querySelector(".spaceCart")
+        }
         return html
     }
 
