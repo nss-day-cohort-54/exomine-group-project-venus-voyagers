@@ -167,15 +167,13 @@ export const purchaseMineral = () => {
     // get colonies
     // get governors to find the colony
     // get colonyMinerals
-    const colonies = getColonies()
     const governors = getGovernors()
-    const colonyMinerals = getColonyMinerals()
-    const facilities = getFacilities()
-    const facilityMinerals = getFacilityMinerals()
-
+    
     // Check if order is proper
     if (state.allOrders.length) {
         for (const order of state.allOrders) {
+            const colonyMinerals = getColonyMinerals()
+            const facilityMinerals = getFacilityMinerals()
             // subtract 1 from facility's available minerals
             // available minerals = filter facilityMinerals by the selectedFacility (id)
             const availableMinerals = facilityMinerals.filter(facilityMineral => facilityMineral.miningFacilityId === order.facilityId)

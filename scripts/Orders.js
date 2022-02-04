@@ -20,7 +20,7 @@ export const displayCart = () => {
         // find mineral name making sure it has an id equal to selected mineral in state
         const mineralName = minerals.find(mineral => mineral.id === order.mineralId).type
         // add string to html variable with message containing interpolated mineral and facility name
-        html += `<div id="cartContents">1 ton of ${mineralName} from ${facilityName}</div>`
+        html += `<div class="cartContents">1 ton of ${mineralName} from ${facilityName}</div>`
         //const spaceCart = document.querySelector(".spaceCart")
         }
         return html
