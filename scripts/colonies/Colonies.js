@@ -17,7 +17,7 @@ export const coloniesHTML = () => {
         const governor = governors.find(governor =>  governor.id === state.selectedGovernor )
         // find in colony list the colony obj which matches colonyId
         const foundColonies = colonies.find(colony => colony.id === governor.coloniesId)
-        coloniesHTML = `<h2>${foundColonies.name}</h2><ul>`
+        coloniesHTML = `<h2>${foundColonies.name} Minerals</h2><ul>`
         // filter colonyMinerals by colony that governor is in
         const colonyMineralsList = colonyMinerals.filter(colonyMineral => colonyMineral.coloniesId === foundColonies.id)
         const finalList = colonyMineralsList.map(list => {

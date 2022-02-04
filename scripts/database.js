@@ -3,7 +3,7 @@ const database = {
     governors: [
         {id: 1, name: "Simon Rockslayer", active: true, coloniesId: 2},
         {id: 2, name: "Brockton Mistershackles", active: false, coloniesId: 1},
-        {id: 3, name: "President Whitmores", active: true, coloniesId: 3},
+        {id: 3, name: "President Whitmore", active: true, coloniesId: 3},
         {id: 4, name: "Lelu Dallas", active: true, coloniesId: 4},
         {id: 5, name: "The Govornator", active: false, coloniesId: 5}
     ],
